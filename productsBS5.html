@@ -160,10 +160,11 @@
           </aside>
           <div class="col-sm-12 col-lg-10 bg-info">
                <!--Produkter visas här under automatiskt från metoden nere med hjälp av id = product-list-->
-               <div class="list" id="product-list"
+               <!-- <div class="list" id="product-list"
                     style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+               </div> -->
+               <div class="list flex-wrap d-inline-flex justify-content-evenly" id="product-list">
                </div>
-
 
 
           </div>
@@ -198,7 +199,8 @@
                     products.forEach(product => {
                          const productContainer = document.createElement('div');
                          productContainer.classList.add('card');
-                         productContainer.style.width = '18rem';
+                         productContainer.classList.add('m-2');
+                         productContainer.style.width = '15rem';
 
                          const prodImgDiv = document.createElement('div');
                          prodImgDiv.classList.add('text-center');
