@@ -8,6 +8,14 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
      <title>Document</title>
+
+     <style>
+          .product-image {
+               width: 300px;
+               height: 300px;
+               object-fit: cover;
+          }
+     </style>
 </head>
 
 <body class="container">
@@ -151,7 +159,8 @@
 
           </aside>
           <div class="col-sm-12 col-lg-10 bg-info">
-               <p>Main Content</p>
+               -- Produkter visas här under automatiskt från metoden nere med hjälp av id = product-list
+               <div class="list" id="product-list" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
           </div>
      </div>
 
@@ -175,5 +184,36 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
      crossorigin="anonymous"></script>
+
+<script>
+     function displayProducts() {
+          fetch('https://fakestoreapi.com/products')
+                  .then(res => res.json())
+                  .then(products => {
+                       let productList = document.getElementById('product-list');
+                       products.forEach(product => {
+                            const productContainer = document.createElement('div');
+                            productContainer.classList.add('product-container')
+
+                            const prodImg = document.createElement('img')
+                            prodImg.src = product.image;
+                            prodImg.alt = product.title;
+                            prodImg.classList.add('img-thumbnail','product-image');
+                            productContainer.appendChild(prodImg);
+
+                            const prodTitle = document.createElement('p')
+                            prodTitle.textContent = product.title
+                            prodTitle.classList.add('product-title')
+                            productContainer.appendChild(prodTitle)
+
+                            productList.appendChild(productContainer)
+
+                       });
+                  })}
+     //Domcontentload behövs för att ladda sidan och för kommande ändringar
+     document.addEventListener("DOMContentLoaded", function () {
+          displayProducts();
+     })
+</script>
 
 </html>
