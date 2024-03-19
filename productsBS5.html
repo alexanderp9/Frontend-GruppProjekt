@@ -159,22 +159,26 @@
 
           </aside>
           <div class="col-sm-12 col-lg-10 bg-info">
-               -- Produkter visas här under automatiskt från metoden nere med hjälp av id = product-list
-               <div class="list" id="product-list" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-          </div>
-     </div>
+               <!--Produkter visas här under automatiskt från metoden nere med hjälp av id = product-list-->
+               <div class="list" id="product-list"
+                    style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+               </div>
 
-     <div class="row" style="height: 10000px; background-color: yellow;">
 
-     </div>
 
-     <!--Footer-->
-     <footer class="row fixed-bottom">
-          <div class="col bg-success">
-               <p>lorem</p>
           </div>
 
-     </footer>
+          <div class="row" style="height: 10000px; background-color: yellow;">
+
+          </div>
+
+          <!--Footer-->
+          <footer class="row fixed-bottom">
+               <div class="col bg-success">
+                    <p>lorem</p>
+               </div>
+
+          </footer>
 
 
      </div>
@@ -188,28 +192,85 @@
 <script>
      function displayProducts() {
           fetch('https://fakestoreapi.com/products')
-                  .then(res => res.json())
-                  .then(products => {
-                       let productList = document.getElementById('product-list');
-                       products.forEach(product => {
-                            const productContainer = document.createElement('div');
-                            productContainer.classList.add('product-container')
+               .then(res => res.json())
+               .then(products => {
+                    let productList = document.getElementById('product-list');
+                    products.forEach(product => {
+                         const productContainer = document.createElement('div');
+                         productContainer.classList.add('card');
+                         productContainer.style.width = '18rem';
 
-                            const prodImg = document.createElement('img')
-                            prodImg.src = product.image;
-                            prodImg.alt = product.title;
-                            prodImg.classList.add('img-thumbnail','product-image');
-                            productContainer.appendChild(prodImg);
+                         const prodImgDiv = document.createElement('div');
+                         prodImgDiv.classList.add('text-center');
+                         
+                         const prodImg = document.createElement('img');
+                         prodImg.src = product.image;
+                         prodImg.alt = product.title;
+                         prodImg.classList.add('card-img-top');
+                         prodImg.classList.add('bg-secondary');
+                         prodImg.style.height = '10em';
+                         prodImg.style.maxWidth = 'fit-content';
+                         prodImgDiv.appendChild(prodImg);
 
-                            const prodTitle = document.createElement('p')
-                            prodTitle.textContent = product.title
-                            prodTitle.classList.add('product-title')
-                            productContainer.appendChild(prodTitle)
+                         productContainer.appendChild(prodImgDiv);
 
-                            productList.appendChild(productContainer)
+                         const prodBody = document.createElement('div');
+                         prodBody.classList.add('card-body');
+                         prodBody.classList.add('bg-warning');
 
-                       });
-                  })}
+                         const prodCatetory = document.createElement('a');
+                         prodCatetory.href = '#';
+                         prodCatetory.textContent = `${product.category}`;
+                         prodBody.appendChild(prodCatetory);
+
+                         const prodBodyTitle = document.createElement('h5');
+                         prodBodyTitle.classList.add('card-title');
+                         prodBodyTitle.textContent = `${product.title}`;
+                         prodBody.appendChild(prodBodyTitle);
+
+                         const prodPrice = document.createElement('p');
+                         prodPrice.classList.add('card-text');
+                         prodPrice.textContent = `${product.price} kr`;
+                         prodBody.appendChild(prodPrice);
+
+                         const proBodyOrderBtn = document.createElement('input');
+                         proBodyOrderBtn.type = 'submit';
+                         proBodyOrderBtn.classList.add('btn');
+                         proBodyOrderBtn.classList.add('btn-primary');
+                         proBodyOrderBtn.value = 'Beställ';
+                         prodBody.appendChild(proBodyOrderBtn);
+
+                         productContainer.appendChild(prodBody);
+
+                         productList.appendChild(productContainer)
+                    });
+               })
+     }
+
+     // function displayProducts() {
+     //      fetch('https://fakestoreapi.com/products')
+     //              .then(res => res.json())
+     //              .then(products => {
+     //                   let productList = document.getElementById('product-list');
+     //                   products.forEach(product => {
+     //                        const productContainer = document.createElement('div');
+     //                        productContainer.classList.add('product-container')
+
+     //                        const prodImg = document.createElement('img')
+     //                        prodImg.src = product.image;
+     //                        prodImg.alt = product.title;
+     //                        prodImg.classList.add('img-thumbnail','product-image');
+     //                        productContainer.appendChild(prodImg);
+
+     //                        const prodTitle = document.createElement('p')
+     //                        prodTitle.textContent = product.title
+     //                        prodTitle.classList.add('product-title')
+     //                        productContainer.appendChild(prodTitle)
+
+     //                        productList.appendChild(productContainer)
+
+     //                   });
+     //              })}
      //Domcontentload behövs för att ladda sidan och för kommande ändringar
      document.addEventListener("DOMContentLoaded", function () {
           displayProducts();
