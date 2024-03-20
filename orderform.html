@@ -29,17 +29,17 @@
 
     <div>
         <label for="name">Namn</label> <br>
-        <input type="text" id="name" placeholder="Förnman Efternamn" class="form-control" required>
+        <input type="text" id="name" placeholder="Förnamn Efternamn" class="form-control" required onblur="checkNameLength()">
     </div>
     <br>
     <div>
         <label for="Telefonnummer">Telefonnummer</label> <br>
-        <input type="tel" id="tel" placeholder="46+" class="form-control" required>
+        <input type="tel" id="tel" placeholder="+46 (31) 123-4567" class="form-control" required onblur="validateTel()">
     </div>
     <br>   
     <div>
         <label for="Email">Email</label> <br>
-        <input type="email" id="email" placeholder="email@exmaple.com" class="form-control" required>
+        <input type="text" id="email" placeholder="email@exmaple.com" class="form-control" required onblur="validateEmail()">
     </div>
     <br>
     <div>
@@ -49,6 +49,58 @@
     <input type="submit" value="Skicka" class="form-control pointer color">
 
     </form>
+
+    <script>
+
+    window.onload = function() {
+        var inputField = document.getElementById('name');
+        inputField.setAttribute('maxlength', '50');
+    }
+
+    function checkNameLength() {
+        var inputText = document.getElementById('name').value;
+        if (inputText.length >= 2) {
+    
+        console.log("rätt namn"); 
+        } else {
+        alert("namnet måste innehålla minst 2 tecken ");
+        }
+    }
+
+    function validateEmail() {
+        var inputEmail = document.getElementById('email').value;
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+        if (emailRegex.test(inputEmail)) {
+
+        console.log("rätt");
+        } else {
+        alert("Måste vara i korrekt format (email@exmaple.com)");
+        }
+    }
+    window.onload = function() {
+        var inputField = document.getElementById('email');
+        inputField.setAttribute('maxlength', '50');
+    }
+
+    window.onload = function() {
+        var inputField = document.getElementById('tel');
+        inputField.setAttribute('maxlength', '50');
+    }
+
+    function validateTel() {
+        var inputTel  = document.getElementById('tel').value;
+        var telRegex = /^(\+46|0)?[0-9()\-\s]+$/;
+        if (telRegex.test(inputTel)){
+          
+            console.log("rätt");
+        } else {
+        alert("Måste vara i korrekt format (+46 (31) 123-4567)");    
+        }
+        
+    }
+
+
+    </script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
