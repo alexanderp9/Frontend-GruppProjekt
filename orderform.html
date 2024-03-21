@@ -137,16 +137,20 @@
         </div>
         <br>
         <div>
+            <label for="Telefonnummer">Telefonnummer</label> <br>
+            <input type="tel" id="tel" placeholder="+46 (31) 123-4567" class="form-control" required onblur="validateTel()">
+        </div>
+        <br>
+        <div>
             <label for="Email">Email</label> <br>
             <input type="text" id="email" placeholder="email@exmaple.com" class="form-control" required onblur="validateEmail()">
         </div>
         <br>
         <div>
-            <label for="Meddelande"></label><br>
-            <textarea id="Meddelande" rows="3" required class="form-control"></textarea>
+            <label for="leveransadress">leveransadress</label> <br>
+            <input type="address" id="address" placeholder="Tex Skogvägen 23" class="form-control" required>
         </div>
         <input type="submit" value="Skicka" class="form-control pointer color">
-
     </form>
 
 </div>
