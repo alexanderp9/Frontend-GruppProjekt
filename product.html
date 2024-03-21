@@ -22,7 +22,7 @@
 
      <!--Navigation-->
 
-     <nav class="row navbar navbar-expand-lg bg-body-tertiary border border-primary">
+     <nav class="row navbar navbar-expand-lg bg-body-tertiary">
 
           <!--Shop logo and picture-->
           <div class="container-fluid">
@@ -44,25 +44,17 @@
                     <div class="collapse navbar-collapse">
                          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                               <li class="nav-item">
-                                   <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                   <a class="nav-link active" aria-current="page" href="home.html">Home</a>
                               </li>
 
-                              <li class="nav-item dropdown">
-                                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Produkter
-                                   </a>
-                                   <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Dam</a></li>
-                                        <li><a class="dropdown-item" href="#">Herr</a></li>
-                                        <li><a class="dropdown-item" href="#">Barn</a></li>
-                                   </ul>
+                              <li class="nav-item">
+                                   <a class="nav-link" href="product.html">Produkter</a>
                               </li>
                               <li class="nav-item">
-                                   <a class="nav-link" href="#">Kontakt Oss</a>
+                                   <a class="nav-link" href="contactform.html">Kontakta Oss</a>
                               </li>
                               <li class="nav-item">
-                                   <a class="nav-link" href="#">Beställ</a>
+                                   <a class="nav-link" href="product.html">Beställningar</a>
                               </li>
                          </ul>
                     </div>
@@ -168,7 +160,7 @@
 
           </div>
 
-          <div class="row" style="height: 10000px; background-color: yellow;">
+          <div class="row" style="height: 1000px; border-style: solid;">
 
           </div>
 
@@ -271,7 +263,7 @@
      //                        productList.appendChild(productContainer)
 
      //                   });
-     //              })}
+     //              })
      //Domcontentload behövs för att ladda sidan och för kommande ändringar
      document.addEventListener("DOMContentLoaded", function () {
           displayProducts();
