@@ -5,8 +5,6 @@
     padding: 0px 15px;
     color: black;
     font-family: 'Poppins', sans-serif;
-
-
 }
 
 .headboard .a:hover{
@@ -20,6 +18,21 @@
 }
 .headboard .d:hover{
     text-decoration: underline;
+}
+
+#navbar-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+#wrapper-gender {
+    position: sticky;
+    font-weight: 500;
+    top: 67px;
+    z-index: 1000;
+    width: 100%;
 }
 
 
