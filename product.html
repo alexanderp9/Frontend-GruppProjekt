@@ -17,118 +17,7 @@
           }
      </style>
 </head>
-
-<body class="container">
-
-     <!--Navigation-->
-
-     <nav class="row navbar navbar-expand-lg bg-body-tertiary">
-
-          <!--Shop logo and picture-->
-          <div class="container-fluid">
-               <div class="d-flex align-item-center">
-                    <img src="https://picsum.photos/50" alt="Shop image">
-                    <a class="navbar-brand fs-3 ps-2" href="#">Shop</a>
-               </div>
-
-               <!--Search bar-->
-
-               <div class="collapse navbar-collapse">
-                    <form class="d-flex" role="search">
-                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-               </div>
-               <div class="d-flex">
-                    <!--Menu Button-->
-                    <div class="collapse navbar-collapse">
-                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                              <li class="nav-item">
-                                   <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-                              </li>
-
-                              <li class="nav-item">
-                                   <a class="nav-link" href="product.html">Produkter</a>
-                              </li>
-                              <li class="nav-item">
-                                   <a class="nav-link" href="contactform.html">Kontakta Oss</a>
-                              </li>
-                              <li class="nav-item">
-                                   <a class="nav-link" href="product.html">Beställningar</a>
-                              </li>
-                         </ul>
-                    </div>
-
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                         data-bs-target="#navbarMenyBtn" aria-controls="navbarMenyBtn" aria-expanded="false"
-                         aria-label="Toggle navigation">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                              class="bi bi-list" viewBox="0 0 16 16">
-                              <path fill-rule="evenodd"
-                                   d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                         </svg>
-                    </button>
-
-                    <!--cart Button-->
-                    <button style="border: none; background-color: inherit;" type="button" data-bs-toggle="offcanvas"
-                         data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                              class="bi bi-cart4" viewBox="0 0 16 16">
-                              <path
-                                   d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
-                         </svg>
-                    </button>
-               </div>
-
-          </div> <!--Container Fluid closes-->
-     </nav>
-
-     <!--cart tab: pop up-->
-     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-          <div class="offcanvas-header">
-               <h5 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h5>
-               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-               <div>
-                    Some products here...
-               </div>
-          </div>
-     </div>
-
-     <!--pop up meun list in small screen-->
-     <div class="collapse navbar-collapse" id="navbarMenyBtn">
-          <div>
-               <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-               </form>
-          </div>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-               <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-               </li>
-
-               <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                         aria-expanded="false">
-                         Produkter
-                    </a>
-                    <ul class="dropdown-menu">
-                         <li><a class="dropdown-item" href="#">Dam</a></li>
-                         <li><a class="dropdown-item" href="#">Herr</a></li>
-                         <li><a class="dropdown-item" href="#">Barn</a></li>
-                    </ul>
-               </li>
-               <li class="nav-item">
-                    <a class="nav-link" href="#">Kontakt Oss</a>
-               </li>
-               <li class="nav-item">
-                    <a class="nav-link" href="#">Beställ</a>
-               </li>
-          </ul>
-     </div>
-
+<div id="content">
      <!--Main Content-->
 
      <div class="row bg-warning text-center">
@@ -136,7 +25,6 @@
                <li class="list-inline-item">Herr</li>
                <li class="list-inline-item">Dam</li>
                <li class="list-inline-item">Barn</li>
-
           </ul>
      </div>
      <div class="row">
@@ -148,126 +36,75 @@
                          <li class="nav-item"><a class="nav-link" href="#">Skor</a></li>
                     </ul>
                </div>
-
           </aside>
           <div class="col-sm-12 col-lg-10 bg-info">
-               <!--Produkter visas här under automatiskt från metoden nere med hjälp av id = product-list-->
-               <!-- <div class="list" id="product-list"
-                    style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-               </div> -->
+               <!-- Produkter visas här dynamiskt från JavaScript -->
                <div class="list flex-wrap d-inline-flex justify-content-evenly" id="product-list"></div>
-
-
           </div>
-
-          <div class="row" style="height: 1000px; border-style: solid;">
-
-          </div>
-
-          <!--Footer-->
-          <footer class="row fixed-bottom">
-               <div class="col bg-success">
-                    <p>lorem</p>
-               </div>
-
-          </footer>
-
-
      </div>
 
-</body>
+     <script>
+          function displayProducts() {
+               fetch('https://fakestoreapi.com/products')
+                       .then(res => res.json())
+                       .then(products => {
+                            let productList = document.getElementById('product-list');
+                            products.forEach(product => {
+                                 const productContainer = document.createElement('div');
+                                 productContainer.classList.add('card');
+                                 productContainer.classList.add('m-2');
+                                 productContainer.style.width = '15rem';
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-     crossorigin="anonymous"></script>
+                                 const prodImgDiv = document.createElement('div');
+                                 prodImgDiv.classList.add('text-center');
 
-<script>
-     function displayProducts() {
-          fetch('https://fakestoreapi.com/products')
-               .then(res => res.json())
-               .then(products => {
-                    let productList = document.getElementById('product-list');
-                    products.forEach(product => {
-                         const productContainer = document.createElement('div');
-                         productContainer.classList.add('card');
-                         productContainer.classList.add('m-2');
-                         productContainer.style.width = '15rem';
+                                 const prodImg = document.createElement('img');
+                                 prodImg.src = product.image;
+                                 prodImg.alt = product.title;
+                                 prodImg.classList.add('card-img-top');
+                                 prodImg.classList.add('bg-secondary');
+                                 prodImg.style.height = '10em';
+                                 prodImg.style.maxWidth = 'fit-content';
+                                 prodImgDiv.appendChild(prodImg);
 
-                         const prodImgDiv = document.createElement('div');
-                         prodImgDiv.classList.add('text-center');
-                         
-                         const prodImg = document.createElement('img');
-                         prodImg.src = product.image;
-                         prodImg.alt = product.title;
-                         prodImg.classList.add('card-img-top');
-                         prodImg.classList.add('bg-secondary');
-                         prodImg.style.height = '10em';
-                         prodImg.style.maxWidth = 'fit-content';
-                         prodImgDiv.appendChild(prodImg);
+                                 productContainer.appendChild(prodImgDiv);
 
-                         productContainer.appendChild(prodImgDiv);
+                                 const prodBody = document.createElement('div');
+                                 prodBody.classList.add('card-body');
+                                 prodBody.classList.add('bg-warning');
 
-                         const prodBody = document.createElement('div');
-                         prodBody.classList.add('card-body');
-                         prodBody.classList.add('bg-warning');
+                                 const prodCatetory = document.createElement('a');
+                                 prodCatetory.href = '#';
+                                 prodCatetory.textContent = `${product.category}`;
+                                 prodBody.appendChild(prodCatetory);
 
-                         const prodCatetory = document.createElement('a');
-                         prodCatetory.href = '#';
-                         prodCatetory.textContent = `${product.category}`;
-                         prodBody.appendChild(prodCatetory);
+                                 const prodBodyTitle = document.createElement('h5');
+                                 prodBodyTitle.classList.add('card-title');
+                                 prodBodyTitle.textContent = `${product.title}`;
+                                 prodBody.appendChild(prodBodyTitle);
 
-                         const prodBodyTitle = document.createElement('h5');
-                         prodBodyTitle.classList.add('card-title');
-                         prodBodyTitle.textContent = `${product.title}`;
-                         prodBody.appendChild(prodBodyTitle);
+                                 const prodPrice = document.createElement('p');
+                                 prodPrice.classList.add('card-text');
+                                 prodPrice.textContent = `${product.price} kr`;
+                                 prodBody.appendChild(prodPrice);
 
-                         const prodPrice = document.createElement('p');
-                         prodPrice.classList.add('card-text');
-                         prodPrice.textContent = `${product.price} kr`;
-                         prodBody.appendChild(prodPrice);
+                                 const proBodyOrderBtn = document.createElement('input');
+                                 proBodyOrderBtn.type = 'submit';
+                                 proBodyOrderBtn.classList.add('btn');
+                                 proBodyOrderBtn.classList.add('btn-primary');
+                                 proBodyOrderBtn.value = 'Beställ';
+                                 prodBody.appendChild(proBodyOrderBtn);
 
-                         const proBodyOrderBtn = document.createElement('input');
-                         proBodyOrderBtn.type = 'submit';
-                         proBodyOrderBtn.classList.add('btn');
-                         proBodyOrderBtn.classList.add('btn-primary');
-                         proBodyOrderBtn.value = 'Beställ';
-                         prodBody.appendChild(proBodyOrderBtn);
+                                 productContainer.appendChild(prodBody);
 
-                         productContainer.appendChild(prodBody);
+                                 productList.appendChild(productContainer);
+                            });
+                       });
+          }
 
-                         productList.appendChild(productContainer)
-                    });
-               })
-     }
+          document.addEventListener("DOMContentLoaded", function () {
+               displayProducts();
+          });
 
-     // function displayProducts() {
-     //      fetch('https://fakestoreapi.com/products')
-     //              .then(res => res.json())
-     //              .then(products => {
-     //                   let productList = document.getElementById('product-list');
-     //                   products.forEach(product => {
-     //                        const productContainer = document.createElement('div');
-     //                        productContainer.classList.add('product-container')
-
-     //                        const prodImg = document.createElement('img')
-     //                        prodImg.src = product.image;
-     //                        prodImg.alt = product.title;
-     //                        prodImg.classList.add('img-thumbnail','product-image');
-     //                        productContainer.appendChild(prodImg);
-
-     //                        const prodTitle = document.createElement('p')
-     //                        prodTitle.textContent = product.title
-     //                        prodTitle.classList.add('product-title')
-     //                        productContainer.appendChild(prodTitle)
-
-     //                        productList.appendChild(productContainer)
-
-     //                   });
-     //              })
-     //Domcontentload behövs för att ladda sidan och för kommande ändringar
-     document.addEventListener("DOMContentLoaded", function () {
-          displayProducts();
-     })
-</script>
-
-</html>
+     </script>
+</div>
