@@ -33,6 +33,10 @@
     top: 67px;
     z-index: 1000;
     width: 100%;
+    background: #76885B;
+    text-align: left;
+    padding-left: 50px;
+
 }
 
 
@@ -96,12 +100,6 @@ body {
     font-weight: 1000;
 }
 
-body .text-centerHerr {
-    background: #76885B;
-    text-align: left;
-    padding-left: 20px;
-    padding-bottom: 5px;
 
-}
 
 
