@@ -208,6 +208,25 @@
         inputField.setAttribute('maxlength', '50');
     }
 
+    window.onload = function() {
+        var inputField = document.getElementById('tel');
+        inputField.setAttribute('maxlength', '50');
+    }
+
+    function validateTel() {
+        var inputTel  = document.getElementById('tel').value;
+        var telRegex = /^(\+46|0)?[0-9()\-\s]+$/;
+        if (telRegex.test(inputTel)){
+          
+            console.log("rätt");
+        } else {
+        alert("Måste vara i korrekt format (+46 (31) 123-4567)");    
+        }
+        
+    }
+
+
+
 </script>
 
 </html>
