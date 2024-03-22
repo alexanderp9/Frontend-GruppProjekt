@@ -7,21 +7,10 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-     <title>Document</title>
 
-     <style>
-          .product-image {
-               width: 300px;
-               height: 300px;
-               object-fit: cover;
-          }
-     </style>
 </head>
 <body class="container">
-
-<div id="content">
      <!--Main Content-->
-
      <div class="row bg-warning text-center">
           <ul class="list-inline">
                <li class="list-inline-item">Herr</li>
@@ -45,7 +34,9 @@
           </div>
      </div>
 
-</div>
+     <script>
+          displayProducts()
+     </script>
 
 <!--Footer-->
 <footer class="row fixed-bottom">
@@ -56,67 +47,3 @@
 
 </body>
 
-<script>
-     function displayProducts() {
-          fetch('https://fakestoreapi.com/products')
-               .then(res => res.json())
-               .then(products => {
-                    let productList = document.getElementById('product-list');
-                    products.forEach(product => {
-                         const productContainer = document.createElement('div');
-                         productContainer.classList.add('card');
-                         productContainer.classList.add('m-2');
-                         productContainer.style.width = '15rem';
-
-                         const prodImgDiv = document.createElement('div');
-                         prodImgDiv.classList.add('text-center');
-
-                         const prodImg = document.createElement('img');
-                         prodImg.src = product.image;
-                         prodImg.alt = product.title;
-                         prodImg.classList.add('card-img-top');
-                         prodImg.classList.add('bg-secondary');
-                         prodImg.style.height = '10em';
-                         prodImg.style.maxWidth = 'fit-content';
-                         prodImgDiv.appendChild(prodImg);
-
-                         productContainer.appendChild(prodImgDiv);
-
-                         const prodBody = document.createElement('div');
-                         prodBody.classList.add('card-body');
-                         prodBody.classList.add('bg-warning');
-
-                         const prodCatetory = document.createElement('a');
-                         prodCatetory.href = '#';
-                         prodCatetory.textContent = `${product.category}`;
-                         prodBody.appendChild(prodCatetory);
-
-                         const prodBodyTitle = document.createElement('h5');
-                         prodBodyTitle.classList.add('card-title');
-                         prodBodyTitle.textContent = `${product.title}`;
-                         prodBody.appendChild(prodBodyTitle);
-
-                         const prodPrice = document.createElement('p');
-                         prodPrice.classList.add('card-text');
-                         prodPrice.textContent = `${product.price} kr`;
-                         prodBody.appendChild(prodPrice);
-
-                         const proBodyOrderBtn = document.createElement('input');
-                         proBodyOrderBtn.type = 'submit';
-                         proBodyOrderBtn.classList.add('btn');
-                         proBodyOrderBtn.classList.add('btn-primary');
-                         proBodyOrderBtn.value = 'Beställ';
-                         prodBody.appendChild(proBodyOrderBtn);
-
-                         productContainer.appendChild(prodBody);
-
-                         productList.appendChild(productContainer);
-                    });
-               });
-     }
-
-     document.addEventListener("DOMContentLoaded", function () {
-          displayProducts();
-     });
-
-</script>
