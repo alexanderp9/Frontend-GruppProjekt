@@ -128,6 +128,8 @@
     </ul>
 </div>
 
+<div id="produkten"></div>
+
 <!--Main Content-->
 <div class="row" style="height: 1000px; border-style: solid" >
     <form action="" style="justify-content: center">
@@ -224,6 +226,27 @@
         }
         
     }
+
+    const product = JSON.parse(localStorage.getItem("product"));
+    console.log(product)
+    
+    const productInfo = document.getElementById("produkten");
+    productInfo.textContent = `
+    Produktnamn: ${product.title}
+    Pris: ${product.price}
+    Beskrivning: ${product.category}
+    `;
+
+    const prodImg = document.createElement('img');
+  prodImg.src = product.image;
+  prodImg.alt = product.title;
+  prodImg.classList.add('card-img-top');
+  prodImg.classList.add('bg-secondary');
+  prodImg.style.height = '10em';
+  prodImg.style.maxWidth = 'fit-content';
+  productInfo.appendChild(prodImg);
+
+  
 
 
 
