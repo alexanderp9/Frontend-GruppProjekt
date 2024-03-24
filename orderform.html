@@ -150,7 +150,7 @@
         <br>
         <div>
             <label for="leveransadress">leveransadress</label> <br>
-            <input type="address" id="address" placeholder="Tex Skogvägen 23" class="form-control" required>
+            <input type="address" id="address" placeholder="Tex Solgatan 12 123 45 Stockholm" class="form-control" required onblur="validateAd()">
         </div>
         <input type="submit" value="Skicka" class="form-control pointer color">
     </form>
@@ -191,7 +191,7 @@
 
             console.log("rätt namn");
         } else {
-            alert("namnet måste innehålla minst 2 tecken ");
+            alert("namnet måste innehålla minst 2 tecken och max 50");
         }
     }
 
@@ -227,6 +227,17 @@
         
     }
 
+    function validateAd(){
+        var inputAd = document.getElementById('address').value;
+        var adRegex = /^([a-zA-Z0-9\s].*)\s([0-9]{5})\s([a-zA-Z0-9\s].*)$/;
+        if (adRegex.test(inputAd)){
+
+        console.log("rätt");
+        } else {
+        alert("Måste vara i korrekt format (Solgatan 12 123 45 Stockholm)");    
+        }
+    }    
+
     const product = JSON.parse(localStorage.getItem("product"));
     console.log(product)
     
@@ -238,13 +249,13 @@
     `;
 
     const prodImg = document.createElement('img');
-  prodImg.src = product.image;
-  prodImg.alt = product.title;
-  prodImg.classList.add('card-img-top');
-  prodImg.classList.add('bg-secondary');
-  prodImg.style.height = '10em';
-  prodImg.style.maxWidth = 'fit-content';
-  productInfo.appendChild(prodImg);
+        prodImg.src = product.image;
+        prodImg.alt = product.title;
+        prodImg.classList.add('card-img-top');
+        prodImg.classList.add('bg-secondary');
+        prodImg.style.height = '10em';
+        prodImg.style.maxWidth = 'fit-content';
+        productInfo.appendChild(prodImg);
 
   
 
