@@ -1,8 +1,10 @@
+<div id="produkten"></div>
+
 
 <body class="container">
 
 <!--Main Content-->
-<div class="row" style="height: 1000px;" >
+<div class="row" style="height: 1000px; border-style: solid" >
     <form action="" style="justify-content: center">
         <div>
             <label for="name">Namn</label> <br>
@@ -21,7 +23,7 @@
         <br>
         <div>
             <label for="leveransadress">leveransadress</label> <br>
-            <input type="address" id="address" placeholder="Tex Skogvägen 23" class="form-control" required>
+            <input type="address" id="address" placeholder="Tex Solgatan 12 123 45 Stockholm" class="form-control" required onblur="validateAd()">
         </div>
         <input type="submit" value="Skicka" class="form-control pointer color">
     </form>
@@ -33,6 +35,7 @@
 
 </div>
 
+
 <!--Footer-->
 <footer class="row fixed-bottom">
     <div class="col bg-success">
@@ -42,7 +45,6 @@
 </footer>
 
 
-</div>
 
 </body>
 
@@ -52,23 +54,23 @@
 
 <script>
     window.onload = function() {
-        var inputField = document.getElementById('name');
+        let inputField = document.getElementById('name');
         inputField.setAttribute('maxlength', '50');
     }
 
     function checkNameLength() {
-        var inputText = document.getElementById('name').value;
+        let inputText = document.getElementById('name').value;
         if (inputText.length >= 2) {
 
             console.log("rätt namn");
         } else {
-            alert("namnet måste innehålla minst 2 tecken ");
+            alert("namnet måste innehålla minst 2 tecken och max 50");
         }
     }
 
     function validateEmail() {
-        var inputEmail = document.getElementById('email').value;
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let inputEmail = document.getElementById('email').value;
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (emailRegex.test(inputEmail)) {
 
             console.log("rätt");
@@ -77,10 +79,54 @@
         }
     }
     window.onload = function() {
-        var inputField = document.getElementById('email');
+        let inputField = document.getElementById('email');
         inputField.setAttribute('maxlength', '50');
     }
 
-</script>
+    window.onload = function() {
+        let inputField = document.getElementById('tel');
+        inputField.setAttribute('maxlength', '50');
+    }
 
-</html>
+    function validateTel() {
+        let inputTel  = document.getElementById('tel').value;
+        let telRegex = /^(\+46|0)?[0-9()\-\s]+$/;
+        if (telRegex.test(inputTel)){
+
+            console.log("rätt");
+        } else {
+            alert("Måste vara i korrekt format (+46 (31) 123-4567)");
+        }
+
+    }
+
+    function validateAd(){
+        let inputAd = document.getElementById('address').value;
+        let adRegex = /^([a-zA-Z0-9\s].*)\s([0-9]{5})\s([a-zA-Z0-9\s].*)$/;
+        if (adRegex.test(inputAd)){
+
+            console.log("rätt");
+        } else {
+            alert("Måste vara i korrekt format (Solgatan 12 123 45 Stockholm)");
+        }
+    }
+
+    const product = JSON.parse(localStorage.getItem("product"));
+    console.log(product)
+
+    const productInfo = document.getElementById("produkten");
+    productInfo.textContent = `
+    Produktnamn: ${product.title}
+    Pris: ${product.price}
+    Beskrivning: ${product.category}
+    `;
+
+    const prodImg = document.createElement('img');
+    prodImg.src = product.image;
+    prodImg.alt = product.title;
+    prodImg.classList.add('card-img-top');
+    prodImg.classList.add('bg-secondary');
+    prodImg.style.height = '10em';
+    prodImg.style.maxWidth = 'fit-content';
+    productInfo.appendChild(prodImg);
+</script>

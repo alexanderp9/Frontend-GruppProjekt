@@ -192,11 +192,23 @@
                     proBodyOrderBtn.value = 'Beställ';
                     prodBody.appendChild(proBodyOrderBtn);
 
-                    productContainer.appendChild(prodBody);
 
+                    proBodyOrderBtn.addEventListener("click", function() {
+                        sendData(product);
+                    });
+
+                    productContainer.appendChild(prodBody);
                     productList.appendChild(productContainer);
+
+
                 });
             });
+    }
+
+    function sendData(product) {
+        console.log(product);
+        localStorage.setItem("product", JSON.stringify(product));
+
     }
 
     document.addEventListener("DOMContentLoaded", function () {
