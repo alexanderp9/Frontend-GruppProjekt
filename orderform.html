@@ -111,22 +111,6 @@
         }
     }
 
-    const product = JSON.parse(localStorage.getItem("product"));
-    console.log(product)
+    displayProductInfo()
 
-    const productInfo = document.getElementById("produkten");
-    productInfo.textContent = `
-    Produktnamn: ${product.title}
-    Pris: ${product.price}
-    Beskrivning: ${product.category}
-    `;
-
-    const prodImg = document.createElement('img');
-    prodImg.src = product.image;
-    prodImg.alt = product.title;
-    prodImg.classList.add('card-img-top');
-    prodImg.classList.add('bg-secondary');
-    prodImg.style.height = '10em';
-    prodImg.style.maxWidth = 'fit-content';
-    productInfo.appendChild(prodImg);
 </script>

@@ -137,10 +137,11 @@
             let page = $(this).data('page');
             loadContent(page);
         });
+        $(document).on('click', '.btn-primary', function(e) {
+            e.preventDefault();
+            loadContent('orderform');
+        });
     });
-</script>
-
-<script>
     function displayProducts() {
         fetch('https://fakestoreapi.com/products')
             .then(res => res.json())
@@ -195,11 +196,11 @@
 
                     proBodyOrderBtn.addEventListener("click", function() {
                         sendData(product);
+
                     });
 
                     productContainer.appendChild(prodBody);
                     productList.appendChild(productContainer);
-
 
                 });
             });
@@ -211,10 +212,30 @@
 
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-    });
+    function displayProductInfo() {
+        const product = JSON.parse(localStorage.getItem("product"));
+        console.log(product);
+
+        const productInfo = document.getElementById("produkten");
+        productInfo.textContent = `
+        Produktnamn: ${product.title}
+        Pris: ${product.price}
+        Beskrivning: ${product.category}
+    `;
+
+        const prodImg = document.createElement('img');
+        prodImg.src = product.image;
+        prodImg.alt = product.title;
+        prodImg.classList.add('card-img-top');
+        prodImg.classList.add('bg-secondary');
+        prodImg.style.height = '10em';
+        prodImg.style.maxWidth = 'fit-content';
+        productInfo.appendChild(prodImg);
+    }
 
 </script>
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
