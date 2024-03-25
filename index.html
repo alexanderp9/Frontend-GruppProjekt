@@ -68,7 +68,7 @@
             </div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" data-page="home">Home</a>
+                    <a class="nav-link active" href="#" data-page="home">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -100,7 +100,12 @@
 
 <div id="wrapper-gender">
     <div class="row text-centerHerr">
-         <ul class="list-inline" style="margin: 0;" id="categoryLink"></ul>
+         <ul class="list-inline" style="margin: 0;" id="categoryLink">
+            <li class="btn list-inline-item" data-page="/category/electronics">Electronics</li>
+            <li class="btn list-inline-item" data-page="/category/jewelery">Jewelery</li>
+            <li class="btn list-inline-item" data-page="/category/mensclothing">Men's Clothing</li>
+            <li class="btn list-inline-item" data-page="/category/womensclothing">Women's Clothing</li>
+        </ul>
     </div>
 </div>
 
@@ -118,6 +123,31 @@
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+    // function displayCategoryList(){
+    //     console.log("hellow");
+    //     fetch('https://fakestoreapi.com/products/categories')
+    //         .then(res => res.json())
+    //         .then(categoryList => {
+    //             let count = 1;
+    //             let categoryLink = document.getElementById('categoryLink');
+    //             categoryList.forEach(category => {
+    //                 const li = document.createElement('li');
+    //                 li.classList.add('list-inline-item');
+    //                 li.classList.add(`a${count}`);
+    //                 li.classList.add('ps-3');
+    //                 li.classList.add('pe-3');
+    //                 li.classList.add('p-2');
+    //                 li.classList.add('btn');
+    //                 // li.dataset.page = `/category/electronics`;
+    //                 li.innerHTML = `<a class="nav-link a${count}" data-page="electronics">${category}</a>`;
+
+    //                 categoryLink.appendChild(li);
+    //                 count++;
+    //                 });
+    //         })
+    //         // .catch(err => console.log("error"));
+    // }
+
     $(document).ready(function() {
         function loadContent(page) {
             $.ajax({
@@ -140,6 +170,14 @@
             let page = $(this).data('page');
             loadContent(page);
         });
+
+        $('.list-inline-item').click(function(e) {
+            e.preventDefault();
+
+            let page = $(this).data('page');
+            loadContent(page);
+        });
+
         $(document).on('click', '.btn-primary', function(e) {
             e.preventDefault();
             loadContent('orderform');
@@ -148,25 +186,7 @@
         displayCategoryList();
     });
 
-    function displayCategoryList(){
-        console.log("hellow");
-        fetch('https://fakestoreapi.com/products/categories')
-            .then(res => res.json())
-            .then(categoryList => {
-                let categoryLink = document.getElementById('categoryLink');
-                categoryList.forEach(category => {
-                    const li = document.createElement('li');
-                    li.classList.add('list-inline-item');
-                    li.classList.add('pe-5');
-                    li.classList.add('p-2');
-                    li.textContent = `${category}`;
-
-                    categoryLink.appendChild(li);
-                    console.log(category);
-                    });
-            })
-            // .catch(err => console.log("error"));
-    }
+    
 
     function displayProducts() {
         fetch('https://fakestoreapi.com/products')
