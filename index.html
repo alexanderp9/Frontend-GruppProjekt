@@ -123,31 +123,6 @@
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    // function displayCategoryList(){
-    //     console.log("hellow");
-    //     fetch('https://fakestoreapi.com/products/categories')
-    //         .then(res => res.json())
-    //         .then(categoryList => {
-    //             let count = 1;
-    //             let categoryLink = document.getElementById('categoryLink');
-    //             categoryList.forEach(category => {
-    //                 const li = document.createElement('li');
-    //                 li.classList.add('list-inline-item');
-    //                 li.classList.add(`a${count}`);
-    //                 li.classList.add('ps-3');
-    //                 li.classList.add('pe-3');
-    //                 li.classList.add('p-2');
-    //                 li.classList.add('btn');
-    //                 // li.dataset.page = `/category/electronics`;
-    //                 li.innerHTML = `<a class="nav-link a${count}" data-page="electronics">${category}</a>`;
-
-    //                 categoryLink.appendChild(li);
-    //                 count++;
-    //                 });
-    //         })
-    //         // .catch(err => console.log("error"));
-    // }
-
     $(document).ready(function() {
         function loadContent(page) {
             $.ajax({
@@ -185,8 +160,6 @@
 
         displayCategoryList();
     });
-
-    
 
     function displayProducts() {
         fetch('https://fakestoreapi.com/products')
