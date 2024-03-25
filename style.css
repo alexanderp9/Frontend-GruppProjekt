@@ -59,6 +59,13 @@
 
 }
 
+.align-bottom-left {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+
 body .container-fluid {
     background: #627254;
     margin-top: -10px;
