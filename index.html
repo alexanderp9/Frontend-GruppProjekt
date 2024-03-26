@@ -162,6 +162,11 @@
             loadContent('orderform');
         });
     });
+
+    let electronicsAPI = 'https://fakestoreapi.com/products/category/electronics';
+               let electronicsTitle = 'Electronics';
+               displayProducts(electronicsTitle,electronicsAPI);
+
     function displayProducts() {
         fetch('https://fakestoreapi.com/products')
             .then(res => res.json())
