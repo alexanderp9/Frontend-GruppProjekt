@@ -107,6 +107,6 @@ body {
     font-weight: 1000;
 }
 
-
-
-
+.list-inline-item:hover{
+    text-decoration: underline;
+}
