@@ -56,7 +56,7 @@
 
 displayProductInfo()
 
-            const inputName = document.getElementById("name");
+           var inputName = document.getElementById("name");
 
         inputName.addEventListener("keyup", function() {
         if (this.value.length > 50) {
@@ -85,7 +85,7 @@ displayProductInfo()
             alert("Måste vara i korrekt format (email@exmaple.com)");
         }
     }
-        const inputEmail = document.getElementById("email");
+        var inputEmail = document.getElementById("email");
 
         inputEmail.addEventListener("keyup", function() {
         if (this.value.length > 50) {
@@ -108,7 +108,7 @@ displayProductInfo()
 
     }
 
-                const inputTel = document.getElementById("tel");
+                var inputTel = document.getElementById("tel");
 
                 inputTel.addEventListener("keyup", function() {
             if (this.value.length > 50) {
@@ -128,7 +128,7 @@ displayProductInfo()
         }
     }
 
-            const inputAddress = document.getElementById("address");
+            var inputAddress = document.getElementById("address");
 
             inputAddress.addEventListener("keyup", function() {
         if (this.value.length > 50) {
