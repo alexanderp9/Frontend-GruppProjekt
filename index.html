@@ -92,9 +92,9 @@
     <div class="row text-centerHerr">
          <ul class="list-inline" style="margin: 0;" id="categoryLink">
             <li class="btn list-inline-item" data-page="/category/electronics">Electronics</li>
-            <li class="btn list-inline-item" data-page="/category/jewelery">Jewelery</li>
+            <!-- <li class="btn list-inline-item" data-page="/category/jewelery">Jewelery</li>
             <li class="btn list-inline-item" data-page="/category/mensclothing">Men's Clothing</li>
-            <li class="btn list-inline-item" data-page="/category/womensclothing">Women's Clothing</li>
+            <li class="btn list-inline-item" data-page="/category/womensclothing">Women's Clothing</li> -->
         </ul>
     </div>
 </div>
@@ -149,6 +149,14 @@
             let page = $(this).data('page');
             loadContent(page);
         });
+
+        $('.list-inline-item').click(function(e) {
+            e.preventDefault();
+
+            let page = $(this).data('page');
+            loadContent(page);
+        });
+
         $(document).on('click', '.btn-primary', function(e) {
             e.preventDefault();
             loadContent('orderform');
