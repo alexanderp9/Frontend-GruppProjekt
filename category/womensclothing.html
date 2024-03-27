@@ -1,1 +1,22 @@
-<h1>Women's clothing</h1>
+<!--Main Content-->
+
+<div class="row">
+     <div class="col-sm-12 col-lg-12">
+          <!--Produkter visas här under automatiskt från metoden nere med hjälp av id = product-list-->
+          <h1 id="categoryTitle"></h1>
+          <div class="list flex-wrap d-inline-flex justify-content-evenly" id="product-list"></div>
+
+     </div>
+
+     <!--Footer-->
+     <footer class="row">
+          <div class="col bg-success fixed-bottom">
+               <p>lorem</p>
+          </div>
+     </footer>
+</div>
+
+<script src="/script.js"></script>
+<script>
+     displayProducts('Women\'s Clothing', 'https://fakestoreapi.com/products/category/women\'s clothing');
+</script>
